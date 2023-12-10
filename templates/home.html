@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+
+    <title>Diabetes Risk Prediction</title>
+    {% include 'bootstrap.html' %}
+
+
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <br>
+
+      <div class = 'container'>
+        <h1 class = "text-center mt-2 mb-4">Diabetes Risk Predictor</h1> <br>
+
+        <div class = 'row' style = "margin-bottom:16px;">
+          <div class = 'col-md-6'>
+            <p class = 'lead'>
+              Diabetes is a chronic disease that occurs either when the pancreas does not produce enough insulin or when the body cannot effectively use the insulin it produces. Insulin is a hormone that regulates blood glucose. Hyperglycaemia, also called raised blood glucose or raised blood sugar, is a common effect of uncontrolled diabetes and over time leads to serious damage to many of the body's systems, especially the nerves and blood vessels.
+            .</p>
+              <p class = 'lead'>
+                My aim is to predict the risk of diabetes based on the symptoms and medical history of the user, using a Machine Learning algorithm. The model is trained on the Diabetes Health Risk Prediction dataset available on kaggle, which I balanced using SMOTEEN before feeding it into my Extreme Gradient Boosting Model (XGBoost). Fill in the questionnaire below to have the model predict the risk of diabetes.
+            </p>
+
+          </div>
+
+        </div>
+
+        <h2 class = "text-center mt mb-4"> Diabetes Questionnaire</h2>
+
+        <div>
+            {% include 'questionnaire.html' %}
+        </div>
+        <div class = 'text-center'><a class = 'btn btn-primary btn-lg' href = "mailto:sagartetalitech@gmail.com?subject=Question%20about%20Diabetes%20Risk&body=Hi%2C%20my%20name%20is">Contact Us</a>
+        </div>
+    </div>
+    {% include 'footer.html'%}
+  </body>
+
+</html>
