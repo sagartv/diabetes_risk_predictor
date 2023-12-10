@@ -14,15 +14,17 @@
     <br>
 
       <div class = 'container'>
-        <h1 class = "display-4 text-center mt-2 mb-4">Why Assess Diabetes Risk?</h1> <br>
+        <h1 class = "display-4 text-center mt-2 mb-4">Diabetes Risk Prediction using Machine Learning Methods</h1> <br>
 
         <div class = 'row' style = "margin-bottom:16px;">
           <div>
             <p class = 'lead'>
-              Diabetes is a chronic disease that occurs either when the pancreas does not produce enough insulin or when the body cannot effectively use the insulin it produces. Insulin is a hormone that regulates blood glucose. Hyperglycaemia, also called raised blood glucose or raised blood sugar, is a common effect of uncontrolled diabetes and over time leads to serious damage to many of the body's systems, especially the nerves and blood vessels.
-            .</p>
+              Diabetes is a chronic disease that occurs either when the pancreas does not produce enough insulin or when the body cannot effectively use the insulin it produces. Insulin is a hormone that regulates blood glucose. Hyperglycaemia, also called raised blood glucose or raised blood sugar, is a common effect of uncontrolled diabetes and over time leads to serious damage to many of the body's systems, especially the nerves and blood vessels.(Source: <a href = "https://www.who.int/health-topics/diabetes">The World Health Organization</a>)
+            </p>
               <p class = 'lead'>
-                My aim is to predict the risk of diabetes based on the symptoms and medical history of the user, using a Machine Learning algorithm. The model is trained on the Diabetes Health Risk Prediction dataset available on kaggle, which I balanced using SMOTEEN before feeding it into my Extreme Gradient Boosting Model (XGBoost). Fill in the questionnaire below to have the model predict the risk of diabetes.
+                This is A FLASK-based web application that predicts the likelihood of the user having diabetes or prediabetes based on the answers to a questionnaire.The model is trained on the Diabetes Health Risk Prediction dataset available on <a href = "https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset?select=diabetes_binary_health_indicators_BRFSS2015.csv">kaggle</a> that was compiled from 253,680 survey responses to the Center for Disease Control's (CDC)  Behavioral Risk Factor Surveillance System (BRFSS2015) in 2015. I balanced this dataset using SMOTEEN before feeding it into an Extreme Gradient Boosting (XGBoost) Model  </p>
+            <p class = "lead">
+    Fill in the questionnaire below to have the model predict the risk of diabetes.
             </p>
 
           </div>
@@ -38,9 +40,13 @@
         <div class = "container">
             {% include 'questionnaire.html' %}
         </div>
-        <div class = 'text-center'><a class = 'btn btn-primary btn-lg' href = "mailto:sagartetalitech@gmail.com?subject=Question%20about%20Diabetes%20Risk&body=Hi%2C%20my%20name%20is">Contact Us</a>
+        <div>
+          <br>
+          <br>
         </div>
+
     </div>
+
     {% include 'footer.html'%}
   </body>
 
