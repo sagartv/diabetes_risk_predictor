@@ -38,9 +38,10 @@ def process_submission():
   #   df = config
   y_pred = pipeline.predict(instance)
   print(y_pred)
+  risk = ['Diabetes or PreDiabetes Unlikely','Risk of Diabetes/PreDiabetes']
   # return y_pred
 
-  return render_template('submission.html', data = data)
+  return render_template('result.html', data = risk[int(y_pred)])
 
 
 if __name__ == "__main__":
