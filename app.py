@@ -1,9 +1,5 @@
-from flask import Flask, render_template, jsonify, request
-import sklearn
-import pandas as pd
-import numpy as np
-import pickle
-import xgboost
+from flask import Flask, render_template, request
+from model_prediction import load_diabetes_model, predict_diabetes
 
 
 app = Flask(__name__)
@@ -19,29 +15,18 @@ def render_home():
   return render_template('home.html')
 
 
-#Use POST method to get form data 
-@app.route('/submission', methods= ['post'])
+#Use POST method to get form data from the questionnaire
+@app.route('/prediction', methods= ['post'])
 def process_submission():
   data = request.form
-  df = pd.DataFrame(data.to_dict(flat = True), index = [0])
-  instance = np.array(df)
-  print(df.shape)
-  print(instance.shape)
-  
-  pipeline = None
-  with open('./models/diabetes_model_v1.pk', 'rb') as f_in:
-    pipeline = pickle.load(f_in)
-    f_in.close()
-  # if type(data) == dict:
-  #   df = pd.DataFrame(data)
-  # else:
-  #   df = config
-  y_pred = pipeline.predict(instance)
-  print(y_pred)
-  risk = ['Diabetes or PreDiabetes Unlikely','Risk of Diabetes/PreDiabetes']
-  # return y_pred
+  model = load_diabetes_model()
+  prediction, probability = predict_diabetes(data, model)
 
-  return render_template('result.html', data = risk[int(y_pred)])
+  if prediction == 0:
+    return render_template('result_negative.html', data = probability)
+  elif prediction == 1:
+    return render_template('result_positive.html', data = probability)
+    
 
 
 if __name__ == "__main__":
