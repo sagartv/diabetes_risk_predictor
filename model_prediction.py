@@ -7,7 +7,7 @@ import xgboost
 #Loads the XGBoost Model
 def load_diabetes_model():
   model = None
-  with open('./models/diabetes_model_v2.pk', 'rb') as f_in:
+  with open('./classifiers/diabetes_model_v2.pk', 'rb') as f_in:
     model = pickle.load(f_in)
     f_in.close()
   return model
