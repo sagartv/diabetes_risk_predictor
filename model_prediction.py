@@ -24,7 +24,7 @@ def predict_diabetes(instance,model):
   instance = preprocess_input(instance)
   prediction = model.predict(instance)
   probability = model.predict_proba(instance)[0][1] * 100.0
-  probability = round(probability)
+  probability = round(probability,1)
   return prediction, probability
   
     
