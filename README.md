@@ -6,11 +6,15 @@ A FLASK-based web application that predicts the likelihood of the user having di
 
 The Dataset was balanced using SMOTEENN and then trained using XGBoost Classifier.
 
+## Docker Image on Hub
+Docker Image Pushed to Hub: https://hub.docker.com/repository/docker/sagartv/diabetes_risk_predictor/
+To get this image use: docker pull sagartv/diabetes_risk_predictor:0.0.1.RELEASE
+To run, expand optional settings and provide a Port Number for your system, this will map to the image's port 3000.
 
-TODO:
+
+## TODO:
 Add Tests
 Build CI/CD Pipelines
-Dockerize
 Deploy on Cloud
 
 
