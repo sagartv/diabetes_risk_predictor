@@ -1,0 +1,1 @@
+from diabetes_predictor import DiabetesPredictor

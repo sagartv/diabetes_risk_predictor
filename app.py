@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from model_prediction import load_diabetes_model, predict_diabetes
+from diabetes_predictor import DiabetesPredictor
 
 
 app = Flask(__name__)
@@ -19,8 +19,7 @@ def render_home():
 @app.route('/prediction', methods= ['post'])
 def process_submission():
   data = request.form
-  model = load_diabetes_model()
-  prediction, probability = predict_diabetes(data, model)
+  prediction, probability = DiabetesPredictor().predict(data)
 
   if prediction == 0:
     return render_template('result_negative.html', data = probability)
