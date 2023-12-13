@@ -1,4 +1,5 @@
 import pytest
+from .. import diabetes_predictor
 from diabetes_predictor import DiabetesPredictor
 from werkzeug.datastructures import ImmutableMultiDict
 
@@ -13,4 +14,6 @@ def response_form():
 
 def test_diabetes_classifier(diabetes_predictor):
   assert diabetes_predictor.classifier is not None
+  assert diabetes_predictor.classifier.__class__name == 'XGBClassifier'
+
 
