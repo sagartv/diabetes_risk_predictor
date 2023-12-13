@@ -19,7 +19,6 @@ def render_home():
 @app.route('/prediction', methods= ['post'])
 def process_submission():
   data = request.form
-  print(data)
   prediction, probability = DiabetesPredictor().predict(data)
 
   if prediction == 0:

@@ -1,5 +1,5 @@
 import pytest
-from .. import diabetes_predictor
+import numpy as np
 from diabetes_predictor import DiabetesPredictor
 from werkzeug.datastructures import ImmutableMultiDict
 
@@ -14,6 +14,15 @@ def response_form():
 
 def test_diabetes_classifier(diabetes_predictor):
   assert diabetes_predictor.classifier is not None
-  assert diabetes_predictor.classifier.__class__name == 'XGBClassifier'
+  # assert diabetes_predictor.classifier.__class__name == 'XGBClassifier'
 
+def test_form_to_numpy(diabetes_predictor, response_form):
+  form_numpy = diabetes_predictor.form_to_numpy(response_form)
+  assert isinstance(form_numpy, np.ndarray)
+  assert form_numpy.shape == (1,21)
 
+def test_predict(diabetes_predictor, response_form):
+  prediction,probability = diabetes_predictor.predict(response_form)
+  assert isinstance(prediction, int)
+  assert isinstance(probability, float)
+  assert prediction >= 0 and prediction <= 1

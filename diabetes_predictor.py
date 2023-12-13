@@ -93,9 +93,10 @@ class DiabetesPredictor:
     '''
     #convert Flask form to numpy ndarray
     data = self.form_to_numpy(form)
+    print(data.shape)
     classifier = self.classifier
     #make prediction
-    prediction = classifier.predict(data)
+    prediction = int(classifier.predict(data)[0])
     #extract probability: note predict_proba is not reliable
     probability = classifier.predict_proba(data)[0][1] * 100.0
     probability = round(probability,1)
