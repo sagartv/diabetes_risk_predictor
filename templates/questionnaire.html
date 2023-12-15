@@ -1,5 +1,5 @@
 
-<form action = "/prediction" method = "post">
+<form action = "/predict" method = "post">
     <label for="HighBP">Have you been diagnosed with High Blood Pressure? (Over 140/90)</label> <br>
     <input type="radio" id="HighBP" name="HighBP" value="1"> Yes<br>
     <input type="radio" id="HighBP" name="HighBP" value="0" checked> No
@@ -20,7 +20,7 @@
   <br>
   
   <label for = "BMI">Enter your Body Mass Index (BMI) </label><br>
-  <input type = "text" name = "BMI" id = "BMI" placeholder = "25" required></input><br>
+  <input type = "number" name = "BMI" id = "BMI" min = "1" max = "60" placeholder = "25" required></input><br>
   <br>
 
   <label for="Smoker">Have you smoked at least 100 cigarettes in your entire life? [Note: 5 packs = 100 cigarettes]</label> <br>
@@ -85,10 +85,10 @@
   <br>
 
   <label for="MentHlth">How many days of poor Mental Health have you had in the past 30 days? </label> <br>
-  <input type = "text" name = "MentHlth" id = "MentHlth" placeholder = "5" required></input><br>
+  <input type = "number" name = "MentHlth" id = "MentHlth" min = "0" max = "30" placeholder = "5" required></input><br>
    <br>
   <label for="PhysHlth">How many days in the last 30 Days have you suffered a physical injury or illness? </label> <br>
-  <input type = "text" name = "PhysHlth" id = "PhysHlth" placeholder = "0" required></input><br> <br>
+  <input type = "number" name = "PhysHlth" id = "PhysHlth" min = "0" max = "30" placeholder = "0" required></input><br> <br>
 
   <label for="DiffWalk">Do you have serious difficulty walking or climbing the stairs? </label> <br>
   <input type="radio" id="DiffWalk" name="DiffWalk" value="1"> Yes</input> <br>
