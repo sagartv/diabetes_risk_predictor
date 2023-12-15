@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request
-from diabetes_predictor import DiabetesPredictor
+from src.pipelines.predict_pipeline import PredictPipeline
 
 
 app = Flask(__name__)
-
-
 
 
 #route to this function when nothing succeeds the "/" in the url
@@ -16,10 +14,10 @@ def render_home():
 
 
 #Use POST method to get form data from the questionnaire
-@app.route('/prediction', methods= ['post'])
+@app.route('/predict', methods= ['post'])
 def process_submission():
   data = request.form
-  prediction, probability = DiabetesPredictor().predict(data)
+  prediction, probability = PredictPipeline().predict(data)
 
   if prediction == 0:
     return render_template('result_negative.html', data = probability)
@@ -29,4 +27,4 @@ def process_submission():
 
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=3000, debug = True)
+  app.run(host='0.0.0.0', port=3000, debug = False)

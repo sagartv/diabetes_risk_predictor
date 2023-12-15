@@ -1,3 +1,4 @@
+import os
 import pickle
 import numpy as np
 import pandas as pd
@@ -5,14 +6,14 @@ import xgboost
 
 
 
-#Diabetes Prediction Class
-class DiabetesPredictor:
+#Prediction Pipeline Class
+class PredictPipeline:
   def __init__(self):
     '''
-    Initialize DiabetesPredictor class by loading classifier from pathname
+    Initialize PredictPipeline class by loading classifier from pathname
 
     '''
-    self.classifier_path = './classifiers/diabetes_model_v2.pk'
+    self.classifier_path = os.path.join("classifiers","diabetes_model_v2.pk")
     self.classifier = self.load_classifier(self.classifier_path)
 
   def return_classifier_path(self):
