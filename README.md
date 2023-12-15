@@ -13,11 +13,15 @@ To get this latest image use: docker pull sagartv/diabetes_risk_predictor:0.0.4.
 
 To run, expand optional settings and provide a Port Number for your system, this will map to the image's port 3000.
 
+## App Live on Render!
+Docker Image RELEASE 0.0.4 is now Deployed and Live on Render.
+Access at https://diabetes-risk-predictor.onrender.com/
+
 
 ## TODO:
-Add Tests *
-Build CI/CD Pipelines
-Deploy on Cloud
+
+Explore CI/CD Pipelines
+
 
 
 
