@@ -9,7 +9,7 @@ def predictpipeline():
 
 @pytest.fixture
 def response_form():
-  form = ImmutableMultiDict([('HighBP', '1'), ('HighChol', '1'), ('BMI', '25'), ('Smoker', '1'), ('Stroke', '0'), ('HeartDiseaseorAttack', '1'), ('PhysActivity', '0'), ('HvyAlcoholConsump', '1'), ('NoDocbcCost', '1'), ('GenHlth', '5'), ('MentHlth', '10'), ('PhysHlth', '5'), ('DiffWalk', '0'), ('Sex', '1'), ('Age', '6'), ('Education', '4'), ('Income', '3')])
+  form = ImmutableMultiDict([('HighBP', '1'), ('HighChol', '1'), ('BMI', '25'), ('Smoker', '1'), ('Stroke', '0'), ('HeartDiseaseorAttack', '1'), ('PhysActivity', '0'), ('HvyAlcoholConsump', '1'), ('NoDocbcCost', '1'), ('GenHlth', '5'), ('MentHlth', '10'), ('PhysHlth', '5'), ('DiffWalk', '0'), ('Age', '6'), ('Education', '4'), ('Income', '3')])
   return form
 
 def test_classifier(predictpipeline):
