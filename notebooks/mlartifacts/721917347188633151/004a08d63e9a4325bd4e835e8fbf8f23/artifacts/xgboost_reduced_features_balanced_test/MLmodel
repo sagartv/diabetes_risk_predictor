@@ -1,0 +1,20 @@
+artifact_path: xgboost_reduced_features_balanced_test
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.8.2
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: xgb
+    xgb_version: '0.80'
+mlflow_version: 2.10.2
+model_size_bytes: 2159109
+model_uuid: 85d45c292fe045f3882db33e6ab568ba
+run_id: 004a08d63e9a4325bd4e835e8fbf8f23
+utc_time_created: '2024-02-15 16:53:59.590456'

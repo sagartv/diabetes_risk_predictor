@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/721917347188633151/cab39062239e43f4aca218ba9c24b24f/artifacts
+end_time: 1708015827156
+entry_point_name: ''
+experiment_id: '721917347188633151'
+lifecycle_stage: active
+run_id: cab39062239e43f4aca218ba9c24b24f
+run_name: logistic_reduced_features_test_1
+run_uuid: cab39062239e43f4aca218ba9c24b24f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1708015819366
+status: 3
+tags: []
+user_id: sagar
