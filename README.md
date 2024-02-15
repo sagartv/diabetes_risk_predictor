@@ -6,6 +6,16 @@ A FLASK-based web application that predicts the likelihood of the user having di
 
 The Dataset was balanced using SMOTEENN, following which an XGBoost Classifier was trained on it, yielding a validation accuracy of 94.3%.
 
+## BIG UPDATE:
+### Model tracking and evaluation using MLFlow:
+Refer to The jupyter notebook in notebooks/diabetes_project.ipynb for the new MLFlow Tracking integration.
+
+After evaluation through MLFlow, 5 Features removed from questionnaire and training data: Sex, Fruits, Veggies, AnyHealthcare, and CholCheck for better results.
+Yet to build Docker Image of Latest Version.
+
+
+
+
 ## Docker Image on Hub
 Docker Image Pushed to Hub: https://hub.docker.com/repository/docker/sagartv/diabetes_risk_predictor/
 
@@ -16,6 +26,7 @@ To run, expand optional settings and provide a Port Number for your system, this
 ## App Live on Render!
 Docker Image RELEASE 0.0.5 is now Deployed and Live on Render.
 Access at https://diabetes-risk-predictor.onrender.com/
+
 
 
 ## TODO:

@@ -13,7 +13,7 @@ class PredictPipeline:
     Initialize PredictPipeline class by loading classifier from pathname
 
     '''
-    self.classifier_path = os.path.join("classifiers","diabetes_model_v2.pk")
+    self.classifier_path = os.path.join("classifiers","diabetes_model_v3.pk")
     self.classifier = self.load_classifier(self.classifier_path)
 
   def return_classifier_path(self):
@@ -80,6 +80,7 @@ class PredictPipeline:
     
     '''
     form_df = pd.DataFrame(form.to_dict(flat = True), index = [0])
+
     return form_df.to_numpy()
     
   #makes prediction with classifier
@@ -95,6 +96,7 @@ class PredictPipeline:
     #convert Flask form to numpy ndarray
     data = self.form_to_numpy(form)
     print(data.shape)
+    print(data)
     classifier = self.classifier
     #make prediction
     prediction = int(classifier.predict(data)[0])
