@@ -1,0 +1,9 @@
+channels:
+- conda-forge
+dependencies:
+- python=3.8.2
+- pip<=24.0
+- pip:
+  - mlflow==2.10.2
+  - xgboost==0.80
+name: mlflow-env

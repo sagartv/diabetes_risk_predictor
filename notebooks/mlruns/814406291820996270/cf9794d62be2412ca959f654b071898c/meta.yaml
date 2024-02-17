@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/814406291820996270/cf9794d62be2412ca959f654b071898c/artifacts
+deleted_time: 1708154935868
+end_time: 1708154396271
+entry_point_name: ''
+experiment_id: '814406291820996270'
+lifecycle_stage: deleted
+run_id: cf9794d62be2412ca959f654b071898c
+run_name: xgboost_reduced_features_balanced_test_50-50_dataset
+run_uuid: cf9794d62be2412ca959f654b071898c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1708154391479
+status: 3
+tags: []
+user_id: sagar
